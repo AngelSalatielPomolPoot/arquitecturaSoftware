@@ -1,0 +1,341 @@
+
+<div id="introduccion">
+    <div class="container">
+        <div class="fondoPrincipal" >
+            <img
+                [src]="'/assets/Recursos/patronCapas/capas2.jpg'"
+                [alt]="'Animes Top'"
+                class="fondoImgTop"  
+            />  
+        </div>
+    
+        <div class="textoTituloContenido">
+            <span>
+                Patron De Capas
+            </span>
+        </div>
+        
+        <h1>¿Qué Es La Arquitectura Por Capas?</h1>
+        
+        <p class="formato-Texto">
+            La arquitectura en capas es un patrón de arquitectura software usada en la gran mayoría de sistemas.
+            Se centra en una distribución jerárquica de las roles y responsabilidades proporcionando una separación 
+            efectiva de las preocupaciones (cada cual se encarga de lo que le cooresponde).
+        </p>
+        <p class="formato-Texto">
+            Al pensar en un sistema en términos de capas, se imaginan los principales subsistemas de software ubicados 
+            de la misma forma que las capas de un pastel, donde cada capa descansa sobre la inferior.
+        </p>
+        
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/patronCapas/capas1.png'"
+                [alt]="'Patron de capas'"
+                class="fonodImagenDiseño"  
+            />  
+        </div>
+    </div>
+</div>
+
+<div id="descripcion">
+    <div class="container">
+
+        
+        <h1 class="formato-titulo">Descripción</h1>
+        
+        <p class="formato-Texto2">
+            La arquitectura en capas consta en dividir la aplicación en capas, con la intención de que cada capa tenga un 
+            rol muy definido, como podría ser, una capa de presentación (UI), una capa de reglas de negocio (servicios) y 
+            una capa de acceso a datos (DAO), sin embargo, este estilo arquitectónico no define cuantas capas debe de tener 
+            la aplicación, sino más bien, se centra en la separación de la aplicación en capas (Aplica el principio 
+            Separación de preocupaciones (SoC)).
+
+        </p>
+
+        <p class="formato-Texto2">
+
+            En la práctica, la mayoría de las veces este estilo arquitectónico es implementado en 4 capas, presentación, 
+            negocio, persistencia y base de datos, sin embargo, es habitual ver que la capa de negocio y persistencia se 
+            combinan en una solo capa, sobre todo cuando la lógica de persistencia está incrustada dentro de la capa de negocio.
+        </p>
+        <div class="subContenido">
+            <h2 class="formato-titulo">Por ejemplo, el diseño de una típica aplicación Web comprende:</h2>
+            
+            <!--collapsen-->
+            <br>
+            <h4 class="formato-titulo">(Presione para desplegar):</h4>
+            <br>
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse1.toggle()" [attr.aria-expanded]="!isCollapsed1"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Capa de presentación</h4>
+                </button>
+            </p>
+            <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+                <div class="card">
+                    <div class="card-body">
+                        (Funcionalidad relacionada con la User Interfase)
+                    </div>
+                </div>
+                <br>
+            </div> 
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsed2"
+                  aria-controls="collapseExample">
+                  <h4 class="">Capa de negocio</h4>
+                </button>
+            </p>
+            <div  #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+                <div class="card">
+                    <div class="card-body">
+                        (Procesamiento de reglas de negocio).También denominada Lógica de Dominio, esta capa contiene la funcionalidad que 
+                        implementa la aplicación. Involucra cálculos basados en la información dada por el usuario y datos almacenados y 
+                        validaciones. Controla la ejecución de la capa de acceso a datos y servicios externos. Se puede diseñar la lógica 
+                        de la capa de negocios para uso directo por parte de componentes de presentación o su encapsulamiento como servicio 
+                        y llamada a través de una interfaz de servicios que coordina la conversación con los clientes del servicio o invoca 
+                        cualquier flujo o componente de negocio.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapsed3"
+                  aria-controls="collapseExample">
+                  <h4 class="">Capa de datos</h4>
+                </button>
+            </p>
+            <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+                <div class="card">
+                    <div class="card-body">
+                        (Funcionalidad relacionada con el accesos a datos). Es donde residen los datos y es la encargada de acceder a los 
+                        mismos. Está formada por uno o más gestores de bases de datos que realizan todo el almacenamiento de datos, reciben 
+                        solicitudes de almacenamiento o recuperación de información desde la capa de negocio.
+
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="fondoPrincipal" > 
+                <img
+                    [src]="'/assets/Recursos/patronCapas/capas3.png'"
+                    [alt]="'Patron de capas'"
+                    class="fonodImagenDiseño"  
+                />  
+            </div>
+ 
+        </div>  
+
+        
+        <br>
+        
+        
+        <h2 class="formato-titulo">Beneficios</h2>
+            
+        <ul class="formato-Texto2-pequeño">
+            <li>
+                    Abstracción, encapsulamiento, capas de funcionalidad muy bien definidas, alta cohesión, reusabilidad (las capas 
+                    inferiores de la pirámide no tienen dependencias de las superiores por lo que es fácil reutilizarlas) y débil 
+                    acoplamiento (comunicación basada en abstracciones)
+            </li>
+            <li>
+                La separación, reduce el riesgo y el impacto de los cambios tecnológicos. Por ejemplo al cambiar el mecanismo 
+                de persistencia de la aplicación las capas que lo consumen no tienen porque realizar cambios. Además aumenta el 
+                rendimiento (a partir de cierta carga de trabajo) al distribuir las capas sobre múltiples capas físicas.                     También aumenta la escalabilidad y la tolerancia a fallos.
+            </li>
+            <li>
+                Este escenario es propicio para implementar una buena política de pruebas, permitiendo conmutar entre diferentes 
+                implementaciones de los interfaces (mock, servicios reales…)
+            </li>
+            <li>
+                Mejoras en Pruebas: La capacidad de realizar pruebas se beneficia de tener una interfaces bien definidas para cada 
+                capa así como de la habilidad para cambiar a diferentes implementaciones de las interfaces de cada capa.
+            </li>
+        </ul>
+
+        <h2 class="formato-titulo">Desventajas</h2>
+            
+        <ul class="formato-Texto2-pequeño">
+            <li>
+                Si se implementaron demasiadas capas el rendimiento de la aplicación puede verse afectado.
+            </li>
+            <li>
+                Ciertas operaciones al ser modificadas pueden afectar a todas las capas, haciendo visible que no existe un 100% de
+                desacople entre estas. 
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="atencionArquitecura">
+    <div class="container">
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/patronCapas/capas5.gif'"
+                [alt]="'Patron de capas'"
+                class="fonodImagenDiseño"  
+            />  
+        </div>
+    
+        
+        <h1>Principios Fundamentales</h1>
+        
+        <p class="formato-Texto">
+            Los principios comunes que se aplican cuando se diseña para usar este estilo de arquitectura incluyen:
+        </p>
+
+
+
+
+        <ul class="formato-Texto2-pequeñoNegro">
+            <li><b>Abstracción:</b> La arquitectura basada en capas abstrae la vista del modelo como un todo mientras que provee suficiente detalle 
+                para entender las relaciones entre capas.</li>
+            <li><b>Encapsulamiento:</b>  El diseño no hace asunciones acerca de tipos de datos, métodos, propiedades o implementación.</li>
+            <li><b>Funcionalidad claramente definida:</b>El diseño claramente define la separación entre la funcionalidad de cada capa. Capas 
+                superiores como la capa de presentación envía comandos a las capas inferiores como la capa de negocios y la capa de datos y los datos fluyen hacia y desde 
+                las capas en cualquier sentido.</li>
+            <li><b>Alta cohesion:</b>La comunicacion entre las capas está basada en la abstracción lo que provee un desacople entre las capas.</li>
+            <li><b>Reutilizable:</b>Las capas inferiores no tienen ninguna dependencia con las capas superiores, permitiéndoles ser reutilizables en otros escenarios.</li>
+            <li><b>Desacople:</b>La comunicacion entre las capas está basada en la abstracción lo que provee un desacople entre las capas.</li>
+        </ul>
+            
+
+       <div class="subContenido2">
+            <h2 class="formato-titulo2"> ¿Qué es una capa?</h2>
+        
+            <p class="formato-Texto2-pequeñoAtencion">
+                Una capa es un conjunto de “cosas” que tienen cierta responsabilidad. Por ejemplo, una capa puede ser un conjunto de clases, agrupadas 
+                en un paquete, dentro de nuestro programa que representan cierta responsabilidad o también puede ser un jar que se comunica con otros y 
+                cada jar representa una capa o pueden ser un sistema y cada sistema es en sí una capa. Cuando nos referimos a capas es una abstracción 
+                de responsabilidades. 
+
+                Además, la arquitectura establece reglas de cómo se deben comunicar las capas.  
+            </p>
+
+            <h2 class="formato-titulo2">Reglas</h2>
+            <!--collapsen-->
+            <br>
+            <h4 class="formato-titulo">(Presione para desplegar):</h4>
+            <br>
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse5.toggle()" [attr.aria-expanded]="!isCollapsed5"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Primera regla </h4>
+                </button>
+            </p>
+            <div #collapse5="ngbCollapse" [(ngbCollapse)]="isCollapsed5">
+                <div class="card">
+                    <div class="card-body">
+                        Cada capa debe tener una responsabilidad única. Es decir que las capas deben estar perfectamente delimitadas 
+                        de que se ocupa cada una de ellas, por ejemplo, podemos tener una capa de “presentación” que será la encargada
+                        de atender los eventos del cliente y encargada de representar la información para el mismo. Por otro lado, 
+                        podemos tener la capa de “acceso a datos” que será la encargada de guardar y acceder a los datos. 
+                    </div>
+                </div>
+                <br>
+            </div> 
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse6.toggle()" [attr.aria-expanded]="!isCollapsed6"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Segunda regla </h4>
+                </button>
+            </p>
+            <div #collapse6="ngbCollapse" [(ngbCollapse)]="isCollapsed6">
+                <div class="card">
+                    <div class="card-body">
+                        Las capas deben respetar una estructura jerárquica estricta. Quiere decir que cada capa pude comunicarse 
+                        solo con la que está debajo suyo, pero NO al revés. Por ejemplo, una clase ubicada en la capa de presentación 
+                        puede llamar a un método ubicado en la capa de acceso a datos, pero nunca la capa de acceso a datos puede 
+                        llamar a un método de la capa de presentación. Y cuando nos referimos a la próxima más baja significa que no 
+                        se puede saltar capas. Veamos un ejemplo gráfico. 
+                    </div>
+                </div>
+                <br>
+            </div> 
+
+            <p class="formato-Texto2-pequeñoAtencion">
+                Para este ejemplo utilizaremos la separación de tres capas “presentación”, “lógica de negocio” y “acceso a datos”. 
+                Esto es lo que se debería hacer y lo que no se debería hacer. 
+            </p>
+
+
+            <div class="fondoPrincipal" > 
+                <img
+                    [src]="'/assets/Recursos/patronCapas/capas4.png'"
+                    [alt]="'Patron de capas'"
+                    class="fonodImagenDiseño"  
+                />  
+            </div>
+
+        </div>
+
+        <h1>Niveles y capas</h1>
+
+        <p class="formato-Texto2-pequeñoNegro">
+            <b>¿Niveles y capas con lo mismo?</b>, los niveles corresponde a la forma en que las capas lógicas se encuentran distribuidas de forma física.
+        </p>
+        <h2>Ejemplos de esto último:</h2>
+
+        <h2 class="formato-titulo2-negro">Reglas</h2>
+        
+        <!--collapsen-->
+        <br>
+        <h4 class="formato-titulo-negro">(Presione para desplegar):</h4>
+        <br>
+        
+        <p>
+            <button type="button" class="btn btn-primary" (click)="collapse7.toggle()" [attr.aria-expanded]="!isCollapsed7"
+                aria-controls="collapseExample">
+                <h4 class=""> Ejemplo 1 </h4>
+            </button>
+        </p>
+        <div #collapse7="ngbCollapse" [(ngbCollapse)]="isCollapsed7">
+            <div class="card">
+                <div class="card-body">
+                    Una solución de 3 capas (presentación, lógica del negocio, datos) que residen en un solo ordenador (Presentación+lógica+datos). Se dice que 
+                    la arquitectura de la solución es de tres capas y un nivel. 
+                </div>
+            </div>
+            <br>
+        </div> 
+
+        <p>
+            <button type="button" class="btn btn-primary" (click)="collapse8.toggle()" [attr.aria-expanded]="!isCollapsed8"
+                aria-controls="collapseExample">
+                <h4 class=""> Ejemplo 2 </h4>
+            </button>
+        </p>
+        <div #collapse8="ngbCollapse" [(ngbCollapse)]="isCollapsed8">
+            <div class="card">
+                <div class="card-body">
+                    Una solución de 3 capas (presentación, lógica del negocio, datos) que residen en dos ordenadores (Presentación+lógica por un lado; lógica+datos
+                    por el otro lado). Se dice que la arquitectura de la solución es de tres capas y dos niveles
+                </div>
+            </div>
+            <br>
+        </div> 
+    </div>
+
+</div>
+
+
+<div id="descripcion">
+    <div class="container">
+        
+        <h1 class="formato-titulo">Video complementario</h1>
+        <iframe class="videoYoutube" src="https://www.youtube.com/embed/uFDT-NHPe-s" title="YouTube video player"
+         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <p class="formato-Texto2">
+            Se agrega un video complementario que explica aspectos del modelo arquitectónico en capas.
+        </p>
+        
+        
+
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+<ngb-carousel class="carousel-pantalla">
+    <ng-template ngbSlide *ngFor="let imagenCarrosel of imagenesCarrosel">
+        <div class="picsum-img-wrapper">
+            <img 
+                class="carrosel-imagen" 
+                [src]="imagenCarrosel.srcImagen" 
+                alt="Random first slide"
+            >
+            <div class="fondoTransparente"></div>
+        </div>
+        
+        <div class="carousel-caption">  
+            <h1 class="textoCarrosel"><b>{{imagenCarrosel.texto}}</b></h1>
+
+            <p class="subtextoCarrosel">Arquitectura de software</p>
+            <button class="btn btn-primary boton-comenzar" (click)="comenzar()">Comenzar</button>     
+            
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+

@@ -1,0 +1,378 @@
+
+<div id="introduccion">
+    <div class="textoTituloContenido">
+        <span>
+            Prueba De Conocimiento
+        </span>
+    </div>
+
+    <div class="container">
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/prueba/prueba.jpg'"
+                [alt]="'Atributos de calidad'"
+                class="fondoImgTop"  
+            />  
+        </div>
+    
+        
+        <br>
+        
+        <p class="formato-Texto">
+            Se podrá realizar una prueba de conocimientos con preguntas relacionadas con los temas que son presentados
+            en este sitio web sobre los temas de la arquitectura de software. Para resolverlo, selecciona una de las opciones disponibles
+            y de forma inmediata, sabrás si tu respuesta es correcta o incorrecta. En caso de que la respuesta sea incorrecta, se te indicará
+            la respuesta correcta.
+        </p>
+            
+    </div>
+</div>
+
+<div id="descripcion">
+    <div class="container">
+    
+        
+        <h1 class="formato-titulo">Pregustas</h1>
+        <!-------------- Pregunta 1------------------->
+        <p class="formato-Texto2">
+            1-	Capturan las principales decisiones de diseño estructural y muestran cómo se descompone la estructura 
+            de software en componentes y cómo se conectan los componentes mediante conectores para producir formas útiles.
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(0)">Vista lógica</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(0)">Patrones de arquitectura</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(0)">Atributos de calidad</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(0)">Vistas de la arquitectura</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[0].valor and listaPreguntas[0].activo;else incorrecto0">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto0>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[0].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[0].respuestaCorrecta}}</b>
+            </p>           
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 2------------------->
+        <p class="formato-Texto2">
+            2-	Es un atributo de calidad que muestra la respuesta del sistema a la realización de determinadas acciones 
+            durante un determinado período de tiempo. Incluye métricas de la arquitectura como, latencia o capacidad del canal.
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(1)">Escalabilidad</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(1)">Rendimiento</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(1)">Testeabilidad</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(1)">Fiabilidad</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[1].valor and listaPreguntas[1].activo;else incorrecto1">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto1>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[1].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[1].respuestaCorrecta}}</b>
+            </p>  
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 3------------------->
+        <p class="formato-Texto2">
+            3-	Fue el año en el que el trabajo de Perry y Wolf, fue el punto de partida para lo que hoy conocemos como arquitectura 
+            de software.
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(2)">1986</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(2)">1992</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(2)">1995</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(2)">1969</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[2].valor and listaPreguntas[2].activo;else incorrecto2">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto2>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[2].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[2].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 4------------------->
+        <p class="formato-Texto2">
+            4-	En esta vista, se centra en la organización real del módulo de software en el entorno de desarrollo de software.
+            El software está empaquetado en pequeños fragmentos (bibliotecas de programas o subsistemas) que pueden ser desarrollados por uno o un pequeño número de desarrolladores.
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(3)">Vista lógica</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(3)">Vista de procesos</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(3)">Vista de escenario</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(3)">Ninguna de las anteriores</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[3].valor and listaPreguntas[3].activo;else incorrecto3">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto3>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[3].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[3].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 5------------------->
+        <p class="formato-Texto2">
+            5-	Es uno de los diagramas de la vista lógica:
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(4)">Diagrama de componentes</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(4)">Diagrama de clases</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(4)">Diagrama de despliegue </button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(4)">Diagrama de caso de uso</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[4].valor and listaPreguntas[4].activo;else incorrecto4">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto4>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[4].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[4].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 6------------------->
+        <p class="formato-Texto2">
+            6-	Esta vista se representa desde la perspectiva de un integrador de sistemas, el flujo de trabajo paso a paso de negocio y operacionales de los 
+            componentes que conforman el sistema. El software se particional en un conjunto de tareas independientes: hilo de control separado que puede planificarse 
+            para su ejecución independiente en un nodo de procesamiento.        
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(5)">Vista de proceso</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(5)">Vista de escenario</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(5)">Vista de desarrollo </button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(5)">Vista lógica</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[5].valor and listaPreguntas[4].activo;else incorrecto5">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto5>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[5].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[5].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 7------------------->
+        <p class="formato-Texto2">
+            7-	Este patrón es usado en la gran mayoría de sistemas. Se centra en una distribución jerárquica de las roles y 
+            responsabilidades proporcionando una separación efectiva de las preocupaciones (cada cual se encarga de lo que le corresponde).    
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(6)">Patrón bróker</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(6)">Patrón por capas</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(6)">Patrón tubería y filtros </button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(6)">Ninguna de las anteriores</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[6].valor and listaPreguntas[6].activo;else incorrecto6">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto6>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[6].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[6].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 8------------------->
+        <p class="formato-Texto2">
+            8.	¿Cuál de las siguientes opciones no pertenece a un atributo de calidad?
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(7)">Escalabilidad</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(7)">Evolución</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(7)">Costo</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(7)">Fiabilidad</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[7].valor and listaPreguntas[7].activo;else incorrecto7">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto7>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[7].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[7].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 9------------------->
+        <p class="formato-Texto2">
+            9.	La desventaja principal de este modelo proviene de que fuerza de alguna manera a un procesamiento lineal de los datos, 
+            no apto para muchos tipos de sistemas (como por ejemplo los sistemas web y aquellos en los que hay muchas interacciones con 
+            los usuarios, que normalmente tienen flujos de control muy complejos).
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(8)">Patrón tubería y filtros</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(8)">Patrón bróker</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(8)">Patrón por capas</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(8)">No pertenece a ninguna de las anteriores.</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[8].valor and listaPreguntas[8].activo;else incorrecto8">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto8>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[8].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[8].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 10------------------->
+        <p class="formato-Texto2">
+            10.	Es el beneficio de uno de los siguientes patrones, donde la separación, reduce el riesgo y el impacto de los cambios tecnológicos. 
+            Por ejemplo, al cambiar el mecanismo de persistencia de la aplicación las capas que lo consumen no tienen por qué realizar cambios.
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(9)">Patrón bróker</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(9)">Patrón por capas</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(9)">Patrón tubería y filtros</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(9)">No pertenece a ninguna de las anteriores</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[9].valor and listaPreguntas[9].activo;else incorrecto9">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto9>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[9].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[9].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 11------------------->
+        <p class="formato-Texto2">
+            11.	Se muestra que los elementos en las cuatro vistas funcionan juntos sin problemas mediante el uso de un pequeño conjunto de escenarios 
+            importantes, instancias de casos de uso más generales, para los cuales describimos los scripts correspondientes (secuencias de interacciones 
+            entre objetos y entre procesos).
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(10)">Vista de escenario</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(10)">Vista de desarrollo</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(10)">Vista de proceso</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(10)">Vista lógica</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[10].valor and listaPreguntas[10].activo;else incorrecto10">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto10>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[10].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[10].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 12------------------->
+        <p class="formato-Texto2">
+            12.	Una de las siguientes opciones representa a un atributo no observable en la ejecución:
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(11)">¿Cómo se comporta el sistema durante la ejecución?</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(11)">¿Los entrega en un tiempo razonable?</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(11)">¿Se comporta apropiadamente al interactuar con otros sistemas?</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(11)">¿Cuán caro ha sido su desarrollo?</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[11].valor and listaPreguntas[11].activo;else incorrecto11">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto11>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[11].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[11].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 13------------------->
+        <p class="formato-Texto2">
+            13.	Corresponde a un patrón para sistema distribuidos:
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(12)">Tubería y filtros</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(12)">Intermediario</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(12)">Reflejo</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(12)">Pizarra</button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[12].valor and listaPreguntas[12].activo;else incorrecto12">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto12>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[12].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[12].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+        <!-------------- Pregunta 14------------------->
+        <p class="formato-Texto2">
+            14.	¿Cual de las siguientes opciones no corresponde a la estructura del patrón bróker?
+        </p>
+        <div class="pregunta">
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(13)">Servidor</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(13)">Puentes</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionFalso(13)">Proxies</button>
+            <button class="btn btn-primary btn-opciones" (click)="opcionVerdadero(13)">No es ninguna de las anteriores </button>
+        </div> 
+        
+        <div class="formato-Texto2-correcta" *ngIf="listaPreguntas[13].valor and listaPreguntas[13].activo;else incorrecto13">
+            <b>Respuesta correcta</b>
+        </div>
+        <ng-template #incorrecto13>
+            <p class="formato-Texto2-incorrecta" *ngIf="listaPreguntas[13].activo==true">
+                Incorrecto. La respuesta correcta es: <b>{{listaPreguntas[13].respuestaCorrecta}}</b>
+            </p>
+        </ng-template>
+        <br>
+
+
+        <!------------------------------------------------Fin de las preguntas------------------------------------>
+        <div class="subContenido">
+            <div class="fondoPrincipal" >
+                <img
+                    [src]="'/assets/Recursos/atributosCalidad/atributo2.png'"
+                    [alt]="'Animes Top'"
+                    class="fondoImgTop"  
+                />  
+            </div>
+
+            
+        </div>           
+    </div>
+</div>
+
+<div id="complemento">
+    <div class="container">
+        <!--<div class="fondoPrincipal" > -
+            <img
+                [src]="'/assets/Recursos/contenido/contenido1.jpg'"
+                [alt]="'Animes Top'"
+                class="fondoImgTop"  
+            />  
+        </div>-->
+    
+        
+        <h1>Nota</h1>
+        <p class="formato-Texto">
+            Muchas gracias por resolver las preguntas. Esperamos que te sirvan de guía para verificar tu dominio adquirido en los temas de esta página web.
+            Es importante considerar que no se entrega ninguna calificación, y que cada pregunta, es de autoevaluación.
+        </p>
+    </div>
+
+    
+</div>
+

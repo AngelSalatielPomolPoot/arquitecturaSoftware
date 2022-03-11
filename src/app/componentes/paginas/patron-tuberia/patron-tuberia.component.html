@@ -1,0 +1,400 @@
+
+<div id="introduccion">
+    <div class="container">
+        <div class="fondoPrincipal" >
+            <img
+                [src]="'/assets/Recursos/patronTuberia/tuberia2.jpg'"
+                [alt]="'Animes Top'"
+                class="fondoImgTop"  
+            />  
+        </div>
+    
+        <div class="textoTituloContenido">
+            <span>
+                Patron De Tuberías Y Filtros
+            </span>
+        </div>
+        
+        <h1>¿Qué Es La Arquitectura Por Tuberías Y Filtros?</h1>
+        
+        <p class="formato-Texto">
+            El patrón de arquitectura Tuberías y Filtros proporciona una estructura para los
+            sistemas de flujo de proceso de datos. Cada paso del proceso se encapsula en
+            un componente de filtro. Los datos se pasan a través de tubos entre filtros
+            adyacentes. Recombinar filtros le permite construir familias de sistemas
+            relacionados
+        </p>
+        <p class="formato-Texto">
+            Siempre se encuadra este estilo dentro de las llamadas arquitecturas de flujo de datos. Es 
+            sin duda alguna el estilo que se definió más temprano y el que puede 
+            identificarse topológica, procesual y taxonómicamente con menor ambigüedad. 
+            Históricamente el se relaciona con las redes de proceso descriptas por Kahn hacia 1974 y 
+            con el proceso secuenciales comunicantes (CSP) ideados por Tony Hoare cuatro años 
+            más tarde. Ha prevalecido el nombre de tubería-filtros por más que se sabe muy bien que 
+            los llamados filtros no realizan forzosamente tareas de filtrado, como ser eliminación de 
+            campos o registros, sino que ejecutan formas variables de transformación, una de las 
+            cuales puede ser el filtrado. En uno de los trabajos recientes más completos sobre este 
+            estilo, Ernst-Erich Doberkat lo define en estos términos.
+        </p>
+        
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/patronTuberia/tuberia1.png'"
+                [alt]="'Patron de capas'"
+                class="fonodImagenDiseño"  
+            />  
+        </div>
+    </div>
+</div>
+
+<div id="descripcion">
+    <div class="container">
+
+        
+        <h1 class="formato-titulo">Descripción</h1>
+        
+        <p class="formato-Texto2">
+            Una tubería (pipeline) es una popular arquitectura que conecta componentes computacionales 
+            (filtros) a través de conectores (pipes), de modo que las computaciones se 
+            ejecutan a la manera de un flujo. Los datos se transportan a través de las tuberías entre los 
+            filtros, transformando gradualmente las entradas en salidas. […] Debido a su simplicidad 
+            y su facilidad para captar una funcionalidad, es una arquitectura mascota cada vez que se 
+            trata de demostrar ideas sobre la formalización del espacio de diseño arquitectónico, igual 
+            que el tipo de datos stack lo fue en las especificaciones algebraicas o en los tipos de 
+            datos abstractos.
+
+        </p>
+        <!--
+        <p class="formato-Texto2">
+
+            En la práctica, la mayoría de las veces este estilo arquitectónico es implementado en 4 capas, presentación, 
+            negocio, persistencia y base de datos, sin embargo, es habitual ver que la capa de negocio y persistencia se 
+            combinan en una solo capa, sobre todo cuando la lógica de persistencia está incrustada dentro de la capa de negocio.
+        </p>-->
+
+
+        <div class="subContenido">
+            <h2 class="formato-titulo">Estructura: El patrón de arquitectura Tubos y Filtros esta conformado por:</h2>
+            
+            <!--collapsen-->
+            <br>
+            <h4 class="formato-titulo">(Presione para desplegar):</h4>
+            <br>
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse1.toggle()" [attr.aria-expanded]="!isCollapsed1"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Tubo</h4>
+                </button>
+            </p>
+            <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+                <div class="card">
+                    <div class="card-body">
+                        Es el conector que pasa los datos de un filtro al siguiente. Se trata
+                        de un flujo unidireccional de datos, que suele ejecutarse por un buffer de
+                        datos para almacenar todos los datos; hasta que el siguiente filtro tiene
+                        tiempo para procesarlo.
+                    </div>
+                </div>
+                <br>
+            </div> 
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsed2"
+                  aria-controls="collapseExample">
+                  <h4 class="">Filtro</h4>
+                </button>
+            </p>
+            <div  #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+                <div class="card">
+                    <div class="card-body">
+                        Es el encargado de filtrar o transformar los datos que recibe a
+                        través de las tuberías.                        
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapsed3"
+                  aria-controls="collapseExample">
+                  <h4 class="">Bomba (Entrada)</h4>
+                </button>
+            </p>
+            <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+                <div class="card">
+                    <div class="card-body">
+                        También llamado productor es el origen de datos.
+                        Puede ser archivos, bases de datos, o dispositivos de entrada. 
+
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse4.toggle()" [attr.aria-expanded]="!isCollapsed4"
+                  aria-controls="collapseExample">
+                  <h4 class="">Sumidero (Salida)</h4>
+                </button>
+            </p>
+            <div #collapse4="ngbCollapse" [(ngbCollapse)]="isCollapsed4">
+                <div class="card">
+                    <div class="card-body">
+                        Se conoce también como consumidor es el objetivo
+                        de los datos, puede ser a archivos, bases de datos o dispositivos de
+                        salida.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+
+            <div class="fondoPrincipal" > 
+                <img
+                    [src]="'/assets/Recursos/patronTuberia/tuberia3.png'"
+                    [alt]="'Patron de capas'"
+                    class="fonodImagenDiseño"  
+                />  
+            </div>
+ 
+        </div>  
+
+        
+        <br>
+        
+        
+        <h2 class="formato-titulo">Un Ejemplo:</h2>
+
+        <p class="formato-Texto2">
+            Supongamos una organización que emite facturas a sus clientes. Una vez a la semana,
+            los pagos realizados se comparan con las facturas. Para esas facturas pagadas, se emite
+            un recibo. Para las facturas que no se pagan dentro del tiempo permitido, se emite un
+            recordatorio. El siguiente es el modelo de una parte del sistema de procesamiento de
+            facturas.
+        </p>
+
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/patronTuberia/tuberia4.png'"
+                [alt]="'Patron de capas'"
+                class="fonodImagenDiseño"  
+            />  
+        </div>
+
+        <p class="formato-Texto2">
+            Se recomienda utilizar este estilo cuando el foco principal de la solución se
+            centra en los datos y, además, es posible especificar una secuencia de un número conocido de pasos o procesos para resolver el problema inicial. En este
+            sentido, los procesos son meros elementos que van transformando los datos
+            en cada paso. Nótese que es requisito indispensable también que todos los
+            componentes situados más adelante en la tubería sean capaces de inspeccionar
+            y actuar sobre los datos que vienen de más atrás, pero no viceversa
+
+        </p>
+        <!--
+        <ul class="formato-Texto2-pequeño">
+            <li>
+                    Abstracción, encapsulamiento, capas de funcionalidad muy bien definidas, alta cohesión, reusabilidad (las capas 
+                    inferiores de la pirámide no tienen dependencias de las superiores por lo que es fácil reutilizarlas) y débil 
+                    acoplamiento (comunicación basada en abstracciones)
+            </li>
+            <li>
+                La separación, reduce el riesgo y el impacto de los cambios tecnológicos. Por ejemplo al cambiar el mecanismo 
+                de persistencia de la aplicación las capas que lo consumen no tienen porque realizar cambios. Además aumenta el 
+                rendimiento (a partir de cierta carga de trabajo) al distribuir las capas sobre múltiples capas físicas.                     También aumenta la escalabilidad y la tolerancia a fallos.
+            </li>
+            <li>
+                Este escenario es propicio para implementar una buena política de pruebas, permitiendo conmutar entre diferentes 
+                implementaciones de los interfaces (mock, servicios reales…)
+            </li>
+            <li>
+                Mejoras en Pruebas: La capacidad de realizar pruebas se beneficia de tener una interfaces bien definidas para cada 
+                capa así como de la habilidad para cambiar a diferentes implementaciones de las interfaces de cada capa.
+            </li>
+        </ul>-->
+
+    </div>
+</div>
+
+<div id="atencionArquitecura">
+    <div class="container">
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/patronTuberia/tuberia5.jpg'"
+                [alt]="'Patron de capas'"
+                class="fonodImagenDiseño"  
+            />  
+        </div>
+    
+        
+        <h1>Ventejas</h1>
+       
+        <ul class="formato-Texto2-pequeñoNegro">
+            <li>
+                Los filtros son entidades independientes fácilmente reutilizables.
+            </li>
+            <li>
+                Aunque en principio fuerzan un procesamiento secuencial, en muchas
+                ocasiones los filtros se pueden colocar en paralelo o incluso estar distribuidos.
+            </li>
+            <li>
+                Los sistemas caracterizados por este estilo arquitectónico son altamente
+                modulares y extensibles.
+            </li>
+            <li>
+                El estilo es fácil de entender e implementar.
+            </li>
+        </ul>
+
+        <h1>Desventajas</h1>
+
+        <p class="formato-Texto2-pequeñoNegro">
+            La desventaja principal del modelo proviene de que fuerza de alguna manera
+            a un procesamiento lineal de los datos, no apto para muchos tipos de sistemas (como por ejemplo los sistemas web y aquellos en los que hay muchas
+            interacciones con los usuarios, que normalmente tienen flujos de control muy
+            complejos)
+        </p>
+
+        
+
+        <!--
+        <ul class="formato-Texto2-pequeñoNegro">
+            <li><b>Abstracción:</b> La arquitectura basada en capas abstrae la vista del modelo como un todo mientras que provee suficiente detalle 
+                para entender las relaciones entre capas.</li>
+            <li><b>Encapsulamiento:</b>  El diseño no hace asunciones acerca de tipos de datos, métodos, propiedades o implementación.</li>
+            <li><b>Funcionalidad claramente definida:</b>El diseño claramente define la separación entre la funcionalidad de cada capa. Capas 
+                superiores como la capa de presentación envía comandos a las capas inferiores como la capa de negocios y la capa de datos y los datos fluyen hacia y desde 
+                las capas en cualquier sentido.</li>
+            <li><b>Alta cohesion:</b>La comunicacion entre las capas está basada en la abstracción lo que provee un desacople entre las capas.</li>
+            <li><b>Reutilizable:</b>Las capas inferiores no tienen ninguna dependencia con las capas superiores, permitiéndoles ser reutilizables en otros escenarios.</li>
+            <li><b>Desacople:</b>La comunicacion entre las capas está basada en la abstracción lo que provee un desacople entre las capas.</li>
+        </ul>-->
+            
+
+       <div class="subContenido2">
+            <h2 class="formato-titulo2"> ¿Cuando usar este patron?</h2>
+        
+            <p class="formato-Texto2-pequeñoAtencion">
+                Se realiza un desglose de los puntos a tomar en cuenta para escoger este modelo arquitectónico.
+            </p>
+
+            <h2 class="formato-titulo2">Reglas</h2>
+            <!--collapsen-->
+            <br>
+            <h4 class="formato-titulo">(Presione para desplegar):</h4>
+            <br>
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse5.toggle()" [attr.aria-expanded]="!isCollapsed5"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Contexto </h4>
+                </button>
+            </p>
+            <div #collapse5="ngbCollapse" [(ngbCollapse)]="isCollapsed5">
+                <div class="card">
+                    <div class="card-body">
+                        Se requieren muchos sistemas para transformar flujos de elementos de datos discretos, de entrada a 
+                        salida. Muchos tipos de transformaciones ocurren repetidamente en la práctica, por lo que es deseable 
+                        crearlos como partes independientes y reutilizables.
+                    </div>
+                </div>
+                <br>
+            </div> 
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse6.toggle()" [attr.aria-expanded]="!isCollapsed6"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Problema </h4>
+                </button>
+            </p>
+            <div #collapse6="ngbCollapse" [(ngbCollapse)]="isCollapsed6">
+                <div class="card">
+                    <div class="card-body">
+                        Dichos sistemas deben dividirse en componentes reutilizables, acoplados libremente con mecanismos de 
+                        interacción genéricos y simples. De esta manera, se pueden combinar de forma flexible entre sí. Los 
+                        componentes, que son genéricos y están poco acoplados, se reutilizan fácilmente. Los componentes, al 
+                        ser independientes, pueden ejecutarse en paralelo.
+                    </div>
+                </div>
+                <br>
+            </div> 
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse7.toggle()" [attr.aria-expanded]="!isCollapsed7"
+                    aria-controls="collapseExample">
+                    <h4 class=""> Solución </h4>
+                </button>
+            </p>
+            <div #collapse7="ngbCollapse" [(ngbCollapse)]="isCollapsed7">
+                <div class="card">
+                    <div class="card-body">
+                        Las tuberías en esta arquitectura forman el canal de comunicación entre filtros. El primer concepto es 
+                        que cada una de las tuberías es unidireccional y de punto a punto por razones de rendimiento, acepta la 
+                        entrada de una fuente y siempre dirige la salida a otra.
+
+                        Existen cuatro tipos de filtros dentro de este estilo de la siguiente manera. 
+
+                        <ul>
+                            <li>
+                                Productor ( source): el punto de partida de un proceso.
+                            </li>
+                            <li>
+                                Transformer ( map): realiza una transformación en algunos o todos los datos.
+                            </li>
+                            <li>
+                                Tester ( reduce): prueba uno o más criterios.
+                            </li>
+                            <li>
+                                Consumidor ( sink): el punto de terminación.
+                            </li>
+                        </ul>
+
+                        No es una buena opción para los sistemas interactivos, debido a su carácter transformador.
+
+                        Un análisis y un análisis excesivos conduce a una pérdida de rendimiento y una mayor complejidad al 
+                        escribir los filtros.
+
+
+                    </div>
+                </div>
+                <br>
+            </div> 
+
+            <p class="formato-Texto2-pequeñoAtencion">
+                La arquitectura de filtro de tubería se utiliza en una variedad de aplicaciones, especialmente en tareas que facilitan 
+                el procesamiento simple y unidireccional, como EDI, herramientas ETL.
+                <br>
+                Compiladores: los filtros consecutivos realizan análisis léxico, análisis sintáctico, análisis semántico y generación 
+                de código.
+            </p>
+
+
+            <div class="fondoPrincipal" > 
+                <img
+                    [src]="'/assets/Recursos/patronTuberia/tuberia6.png'"
+                    [alt]="'Patron de capas'"
+                    class="fonodImagenDiseño"  
+                />  
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="descripcion">
+    <div class="container">
+        
+        <h1 class="formato-titulo">Video complementario</h1>
+        <iframe class="videoYoutube" src="https://www.youtube.com/embed/D5MNIEstTz4" title="YouTube video player"
+         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <p class="formato-Texto2">
+            Se agrega un video complementario que explica aspectos del modelo arquitectónico en tuberías y filtros.
+        </p>    
+        
+
+    </div>
+</div>

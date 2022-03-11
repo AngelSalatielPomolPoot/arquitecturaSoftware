@@ -1,0 +1,312 @@
+<div class="tituloDiv">
+    <div class="prueba2 textTitulo1"><b>Arquitectura</b> </div> 
+    <div class="prueba2 textTitulo2"> 
+        <span> De Software</span>
+    </div>
+</div>
+
+<div id="introduccion">
+    <div class="container">
+        <div class="fondoPrincipal" >
+            <img
+                [src]="'/assets/Recursos/contenido/contenido1.jpg'"
+                [alt]="'Animes Top'"
+                class="fondoImgTop"  
+            />  
+        </div>
+    
+        
+        <h1>Introducción</h1>
+        
+        <p class="formato-Texto">
+            La arquitectura de software es un concepto fácil de entender y que la mayoría de los ingenieros
+            aprecian intuitivamente, sobre todo los que tienen un poco de experiencia, pero resulta difícil
+            definirlo con precisión. En concreto, es difícil dibujar una línea precisa entre el diseño y la
+            arquitectura, la arquitectura es un aspecto de diseño que se concentra en algunas características
+            específicas.
+        </p>
+        <p class="formato-Texto">
+            En RUP, la arquitectura de un sistema de software (en un punto determinado) es la organización o la 
+            estructura de los componentes importantes del sistema que interactúan mediante interfaces, con componentes 
+            compuestos de interfaces y componentes cada vez más pequeños.
+        </p>
+            
+    </div>
+</div>
+
+<div id="descripcion">
+    <div class="container">
+        <!--<div class="fondoPrincipal" > -
+            <img
+                [src]="'/assets/Recursos/contenido/contenido1.jpg'"
+                [alt]="'Animes Top'"
+                class="fondoImgTop"  
+            />  
+        </div>-->
+    
+        
+        <h1 class="formato-titulo">Descripción de la arquitectura</h1>
+        
+        <p class="formato-Texto2">
+            La arquitectura de software es un concepto fácil de entender y que la mayoría de los ingenieros
+            aprecian intuitivamente, sobre todo los que tienen un poco de experiencia, pero resulta difícil
+            definirlo con precisión. En concreto, es difícil dibujar una línea precisa entre el diseño y la
+            arquitectura, la arquitectura es un aspecto de diseño que se concentra en algunas características
+            específicas.
+        </p>
+
+        <div class="subContenido">
+            <h2 class="formato-titulo">Vistas de la arquitectura</h2>
+        
+            <p class="formato-Texto2-pequeño">
+                Cada vista de la arquitectura trata un conjunto concreto de problemas, específico de interesados
+                en el proceso de desarrollo: usuarios, diseñadores, gestores, ingenieros de sistemas, mantenedores,
+                etc.
+
+                Las vistas capturan las principales decisiones de diseño estructural y muestran cómo se descompone
+                la estructura de software en componentes y cómo se conectan los componentes mediante conectores
+                para producir formas útiles. Estas elecciones de diseño deben estar unidas a los Requisitos,
+                funcionales y suplementarios y otras restricciones. Aunque, a su vez, añaden más restricciones a
+                los requisitos y a las próximas decisiones de diseño en un nivel inferior.
+            </p>
+
+            <h2 class="formato-titulo">Modelo de Vistas de Arquitectura 4+1</h2>
+        
+            <p class="formato-Texto2-pequeño">
+                La arquitectura se representa mediante un número diferente de vistas de la arquitectura, que, esencialmente,
+                son extractos que ilustran los elementos "significativos arquitectónicamente" de los modelos. El modelo propuesto
+                por RUP para representar la arquitectura utiliza el siguiente conjunto de  vistas, llamado el
+                "modelo de vista 4+1":
+            </p>
+
+            <div class="fondoModeloVista" > 
+                <img
+                    [src]="'/assets/Recursos/contenido/modeloVistas.png'"
+                    [alt]="'Modelo De Vistas 4+1'"
+                    class="fonodImagenModeloVistas"  
+                />  
+            </div>
+    
+            <!--collapsen-->
+            <br>
+            <h4 class="formato-titulo">(Presione para desplegar):</h4>
+            <br>
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse1.toggle()" [attr.aria-expanded]="!isCollapsed1"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Vista de escenario o de casos de Uso</h4>
+                </button>
+            </p>
+            <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+                <div class="card">
+                    <div class="card-body">
+                        Lista los casos de uso o escenarios del modelo de casos de uso 
+                        que representen funcionalidades centrales del sistema final, que requieran una gran 
+                        cobertura arquitectónica o aquellos que impliquen algún punto especialmente delicado 
+                        de la arquitectura.
+                    </div>
+                </div>
+                <br>
+            </div> 
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsed2"
+                  aria-controls="collapseExample">
+                  <h4 class="">Vista lógica</h4>
+                </button>
+            </p>
+            <div  #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+                <div class="card">
+                    <div class="card-body">
+                        Describe las partes arquitectónicamente significativas del modelo de 
+                        diseño, como ser la descomposición en capas, subsistemas o paquetes. Una vez 
+                        presentadas estas unidades lógicas principales, se profundiza en ellas hasta el nivel que 
+                        se considere adecuado.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapsed3"
+                  aria-controls="collapseExample">
+                  <h4 class="">Vista física</h4>
+                </button>
+            </p>
+            <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+                <div class="card">
+                    <div class="card-body">
+                        En esta vista se muestra desde la perspectiva de un ingeniero de sistemas todos los componentes físicos del
+                        sistema así como las conexiones físicas entre esos componentes que conforman la solución (incluyendo los 
+                        servicios). Para completar la documentación de esta vista se puede incluir el diagrama de despliegue de UML.
+
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse4.toggle()" [attr.aria-expanded]="!isCollapsed4"
+                  aria-controls="collapseExample">
+                  <h4 class="">Vista de proceso</h4>
+                </button>
+            </p>
+            <div #collapse4="ngbCollapse" [(ngbCollapse)]="isCollapsed4">
+                <div class="card">
+                    <div class="card-body">
+                        Contiene la descripción de las tareas (proceso y hebras) implicadas, sus interacciones y configuraciones y la
+                        asignación de clases y objetos de diseño a tareas. Esta vista sólo debe utilizarse si el sistema tiene un
+                        grado significativo de Concurrencia. En RUP, es un subconjunto del Modelo de diseño.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse5.toggle()" [attr.aria-expanded]="!isCollapsed5"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Vista de despliegue o desarrollo</h4>
+                </button>
+            </p>
+            <div #collapse5="ngbCollapse" [(ngbCollapse)]="isCollapsed5">
+                
+                <div class="card">
+                    <div class="card-body">
+                        Contiene la descripción de los diferentes nodos físicos para la mayoría de las configuraciones típicas de la
+                        plataforma y la asignación de tareas (de la vista de proceso) a los nodos físicos. Esta vista sólo debe
+                        utilizarse si el sistema es distribuido. Es un subconjunto del Modelo de despliegue.
+                    </div>
+                </div>
+                <br>
+            </div>
+            
+        </div>           
+    </div>
+</div>
+
+<div id="atencionArquitecura">
+    <div class="container">
+        <!--<div class="fondoPrincipal" > -
+            <img
+                [src]="'/assets/Recursos/contenido/contenido1.jpg'"
+                [alt]="'Animes Top'"
+                class="fondoImgTop"  
+            />  
+        </div>-->
+    
+        
+        <h1>Atención en la arquitectura</h1>
+        
+        <p class="formato-Texto">
+            Aunque las vistas de arriba pueden representar el diseño completo de un sistema, la arquitectura trata 
+            únicamente algunos aspectos específicos:
+        </p>
+        <p class="formato-Texto">
+            En RUP, la arquitectura de un sistema de software (en un punto determinado) es la organización o la 
+            estructura de los componentes importantes del sistema que interactúan mediante interfaces, con componentes 
+            compuestos de interfaces y componentes cada vez más pequeños.
+        </p>
+        
+
+        <ul class="formato-Texto2-pequeñoNegro">
+            <li><b>La estructura del modelo:</b> los patrones organizativos, por ejemplo, la Creación de capas.</li>
+            <li><b>Los elementos esenciales:</b>  guiones de uso críticos, clases principales, mecanismos comunes, etc.,
+                en oposición a todos los elementos presentes en el modelo.</li>
+            <li><b>Unos cuantos casos de ejemplo clave:</b>que muestran los flujos de control principales en el sistema.</li>
+            <li><b>Los servicios</b>para capturar aspectos de la línea de productos, modularidad y características opcionales.</li>
+       </ul>
+            
+
+       <div class="subContenido2">
+            <h2 class="formato-titulo2">Vistas de la arquitectura</h2>
+        
+            <p class="formato-Texto2-pequeñoAtencion">
+                Cada vista de la arquitectura trata un conjunto concreto de problemas, específico de interesados
+                en el proceso de desarrollo: usuarios, diseñadores, gestores, ingenieros de sistemas, mantenedores,
+                etc.
+
+                Las vistas capturan las principales decisiones de diseño estructural y muestran cómo se descompone
+                la estructura de software en componentes y cómo se conectan los componentes mediante conectores
+                para producir formas útiles. Estas elecciones de diseño deben estar unidas a los Requisitos,
+                funcionales y suplementarios y otras restricciones. Aunque, a su vez, añaden más restricciones a
+                los requisitos y a las próximas decisiones de diseño en un nivel inferior.
+            </p>
+
+            <h2 class="formato-titulo2">Ejemplos de patrones de arquitectura</h2>
+        
+            <p class="formato-Texto2-pequeñoAtencion">
+                Se presenta una agrupacion de patrones de arquitectura en función de las características de los sistemas en los que son más
+                aplicables; una de las categorías trata temas de estructura más generales. La tabla muestra las categorías y los
+                patrones que contienen.
+            </p>
+
+
+
+            <table class="table table-dark table-striped">
+                <tbody>
+                    <tr>
+                        <th>
+                            Categoría
+                        </th>
+                        <th>
+                            Patrón
+                        </th>
+                    </tr>
+                    <tr>
+                        <th rowspan="3">
+                            Estructura
+                        </th>
+                        <td >
+                            Capas
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Conductos y filtros
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Pizarra
+                        </td>
+                    </tr>
+                    <tr>
+                        <th >
+                            Sistemas distribuidos
+                        </th>
+                        <td >
+                            Intermediario
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">
+                            Sistemas interactivos
+                        </th>
+                        <td >
+                            Modelo-Vista-Controlador
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Presentación-Abstracción-Control
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">
+                            Sistemas adaptables
+                        </th>
+                        <td >
+                            Reflejo
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Microkernel
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

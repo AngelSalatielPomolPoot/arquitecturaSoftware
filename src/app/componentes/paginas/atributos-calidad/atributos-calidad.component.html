@@ -1,0 +1,338 @@
+
+<div id="introduccion">
+    <div class="textoTituloContenido">
+        <span>
+            Atributos de Calidad
+        </span>
+    </div>
+
+    <div class="container">
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/atributosCalidad/atributo1.jpg'"
+                [alt]="'Atributos de calidad'"
+                class="fondoImgTop"  
+            />  
+        </div>
+    
+        
+        <br>
+        
+        <p class="formato-Texto">
+            Los proyectos de software son cada vez más complejos, más grandes, más integrados y se llevan
+            a cabo mediante el uso de varias variedades de tecnologías. Estas diversas tecnologías necesitan
+            ser administradas y organizadas para entregar un producto de calidad.
+        </p>
+        <h1>Importancia</h1>
+        <p class="formato-Texto">
+            La creación de buenas arquitecturas suele ser el precio de una inversión inicial significativa.
+            Por eso es de suma importancia asegurar una buena calidad en todo el proyecto de software.
+
+            La medición es crucial y las organizaciones se esfuerzan por llegar a medidas significativas que
+            indiquen el progreso y el rendimiento. La medición en la arquitectura de software es un factor
+            crucial para evaluar las características de calidad del software como la escalabilidad, la eficiencia,
+            la capacidad de mantenimiento, el rendimiento, etc.
+        </p>
+            
+    </div>
+</div>
+
+<div id="descripcion">
+    <div class="container">
+    
+        
+        <h1 class="formato-titulo">Atributos Clave </h1>
+        
+        <p class="formato-Texto2">
+            A continuación se presentan los atributos clave de la calidad de la arquitectura de software 
+            que se deben supervisar continuamente, para realizar mejoras incrementales:
+        </p>
+
+
+        <div class="subContenido">
+            <div class="fondoPrincipal" >
+                <img
+                    [src]="'/assets/Recursos/atributosCalidad/atributo2.png'"
+                    [alt]="'Animes Top'"
+                    class="fondoImgTop"  
+                />  
+            </div>
+
+            <!--collapsen-->
+            <br>
+            <h4 class="formato-titulo">(Presione para desplegar):</h4>
+            <br>
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse1.toggle()" [attr.aria-expanded]="!isCollapsed1"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Mantenibilidad</h4>
+                </button>
+            </p>
+            <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+                <div class="card">
+                    <div class="card-body">
+                        La capacidad de mantenimiento es el grado en que el software es comprendido, reparado o
+                        mejorado. Debería ser fácil hacer cambios en el software, ya sea para la adición de una
+                        nueva característica o para la corrección de un error. La mantenibilidad es la facilidad
+                        con la que se puede modificar el software, adaptarlo para otros fines o transferirlo de 
+                        un equipo de desarrollo a otro. El cumplimiento de las reglas de arquitectura del software 
+                        y la coherencia en toda la aplicación se combinan para hacer que el software sea mantenible. 
+                    </div>
+                </div>
+                <br>
+            </div> 
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsed2"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Extensibilidad</h4>
+                </button>
+            </p>
+            <div  #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+                <div class="card">
+                    <div class="card-body">
+                        La extensibilidad es la capacidad de la arquitectura de software para manejar la adición de 
+                        nuevas funcionalidades y componentes. Es muy valiosa en el desarrollo ágil ya que las características
+                        se añaden a lo largo de la vida del proyecto.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapsed3"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Simplicidad</h4>
+                </button>
+            </p>
+            <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+                <div class="card">
+                    <div class="card-body">
+                        Hacer una arquitectura de software tan simple como sea posible es la clave para que sea más 
+                        comprensible para todos.
+
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse4.toggle()" [attr.aria-expanded]="!isCollapsed4"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Rendimiento</h4>
+                </button>
+            </p>
+            <div #collapse4="ngbCollapse" [(ngbCollapse)]="isCollapsed4">
+                <div class="card">
+                    <div class="card-body">
+                        Muestra la respuesta del sistema a la realización de determinadas acciones durante un determinado
+                        período de tiempo. Incluye métricas de la arquitectura como, latencia: tiempo dedicado a responder
+                        a un evento, capacidad del canal: el número de eventos que ocurren en un determinado momento.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse5.toggle()" [attr.aria-expanded]="!isCollapsed5"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Escalabilidad</h4>
+                </button>
+            </p>
+            <div #collapse5="ngbCollapse" [(ngbCollapse)]="isCollapsed5">
+                
+                <div class="card">
+                    <div class="card-body">
+                        La escalabilidad es la capacidad del sistema para manejar aumentos de carga sin disminuir el rendimiento,
+                        o la posibilidad de aumentar rápidamente la carga. Los indicadores clave para medir este atributo son,
+                        si el sistema permite la escalada horizontal, el tiempo necesario para aumentar la escalada, en segundos,
+                        las limitaciones de escalada: el número de servidores o la capacidad de la red y la posibilidad de escalar:
+                        el aumento del número de transacciones o la cantidad de contenido.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse6.toggle()" [attr.aria-expanded]="!isCollapsed6"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Interoperabilidad</h4>
+                </button>
+            </p>
+            <div #collapse6="ngbCollapse" [(ngbCollapse)]="isCollapsed6">
+                
+                <div class="card">
+                    <div class="card-body">
+                        Responsable del funcionamiento y la transmisión de datos y su intercambio con otros sistemas 
+                        externos. Un sistema bien diseñado facilita la integración con sistemas de terceros. Para
+                        mejorar la interoperabilidad, puede utilizar interfaces externas bien diseñadas, sistemas de 
+                        estandarización, etc.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse7.toggle()" [attr.aria-expanded]="!isCollapsed7"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Evolución</h4>
+                </button>
+            </p>
+            <div #collapse7="ngbCollapse" [(ngbCollapse)]="isCollapsed7">
+                
+                <div class="card">
+                    <div class="card-body">
+                        La arquitectura de software expone las dimensiones a lo largo de las cuales se espera que un sistema evolucione.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse8.toggle()" [attr.aria-expanded]="!isCollapsed8"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Fiabilidad</h4>
+                </button>
+            </p>
+            <div #collapse8="ngbCollapse" [(ngbCollapse)]="isCollapsed8">
+                
+                <div class="card">
+                    <div class="card-body">
+                        Riesgo de fallo de software y la estabilidad de un programa cuando se expone a condiciones inesperadas. 
+                        Un software fiable tiene un tiempo de inactividad mínimo, buena integridad de los datos y no hay errores
+                        que afecten directamente a los usuarios.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse9.toggle()" [attr.aria-expanded]="!isCollapsed9"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Seguridad</h4>
+                </button>
+            </p>
+            <div #collapse9="ngbCollapse" [(ngbCollapse)]="isCollapsed9">
+                
+                <div class="card">
+                    <div class="card-body">
+                        Evalúa lo bien que una aplicación protege la información contra el riesgo de infracciones de 
+                        software. Por ejemplo, la cantidad y la gravedad de las vulnerabilidades encontradas en un 
+                        sistema de software son indicadores de su nivel de seguridad. También se puede medir la seguridad 
+                        evaluando el tiempo que se tarda en parchear o arreglar las vulnerabilidades del software.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse10.toggle()" [attr.aria-expanded]="!isCollapsed10"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Tasa de entrega</h4>
+                </button>
+            </p>
+            <div #collapse10="ngbCollapse" [(ngbCollapse)]="isCollapsed10">
+                
+                <div class="card">
+                    <div class="card-body">
+                        La tasa de entrega significa la frecuencia con la que se envían nuevas versiones de software a
+                        los clientes. Dado que una nueva versión de software suele venir con mejoras que afectan directamente
+                        a los usuarios, se puede deducir que las tasas de entrega más altas corresponden a un software de
+                        mejor calidad para los clientes.  
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse11.toggle()" [attr.aria-expanded]="!isCollapsed11"
+                  aria-controls="collapseExample">
+                  <h4 class="">Atributo De Testeabilidad</h4>
+                </button>
+            </p>
+            <div #collapse11="ngbCollapse" [(ngbCollapse)]="isCollapsed11">
+                
+                <div class="card">
+                    <div class="card-body">
+                        El software de calidad requiere un alto grado de testeabilidad. Encontrar fallos en el software 
+                        con un alto grado de comprobabilidad es más fácil, lo que hace que esos sistemas tengan menos 
+                        probabilidades de contener errores cuando se envían a los usuarios finales. Los principales 
+                        indicadores de este atributo son el porcentaje de cobertura con integración, las pruebas unitarias, 
+                        etc.  
+                    </div>
+                </div>
+                <br>
+            </div>
+            
+        </div>           
+    </div>
+</div>
+
+<div id="complemento">
+    <div class="container">
+        <!--<div class="fondoPrincipal" > -
+            <img
+                [src]="'/assets/Recursos/contenido/contenido1.jpg'"
+                [alt]="'Animes Top'"
+                class="fondoImgTop"  
+            />  
+        </div>-->
+    
+        
+        <h1>Video complementario</h1>
+        <iframe class="videoYoutube" src="https://www.youtube.com/embed/8jLKZanMCZM" title="YouTube video player"
+         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <p class="formato-Texto">
+            Se presenta un video explicando sobre los atributos de calidad del software y mostrandoce algunos
+            de los atributos aquí mencionados.
+        </p>
+    </div>
+
+    <div class="container">
+        <!--<div class="fondoPrincipal" > -
+            <img
+                [src]="'/assets/Recursos/contenido/contenido1.jpg'"
+                [alt]="'Animes Top'"
+                class="fondoImgTop"  
+            />  
+        </div>-->    
+       <div class="subContenido2">
+            <h2 class="formato-titulo2">La arquitectura y los atributos</h2>
+        
+            <p class="formato-Texto2-pequeñoAtencion">
+                Un sistema puede evaluarse de dos formas para comprobar que cumple sus atributos de calidad:       
+            </p>
+            <h3 class="formato-titulo2">
+                <b>Atributos observables mediante la ejecución:</b>
+            </h3 >
+            <div class="formato-Texto2-pequeñoAtencion">
+                <ul>
+                    <li>¿Cómo se comporta el sistema durante la ejecución?</li>
+                    <li>¿Entrega los resultados esperados?</li>
+                    <li>¿Los entrega en un tiempo razonable?</li>
+                    <li>¿Tienen los resultados una precisión tolerable?</li>
+                    <li>¿Se comporta apropiadamente al interactuar con otros sistemas?</li>
+                </ul>
+            </div>
+
+            <h3 class="formato-titulo2">
+                <b>Atributos no observables en la ejecución:</b>
+            </h3 >
+            <div class="formato-Texto2-pequeñoAtencion">
+                <ul>
+                    <li>¿Cuán fácil es integrar el sistema, probarlo o modificarlo?</li>
+                    <li>¿Cuán caro ha sido su desarrollo?</li>
+                    <li>¿Cuánto se tardó en tenerlo disponible en el mercado?</li>
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+

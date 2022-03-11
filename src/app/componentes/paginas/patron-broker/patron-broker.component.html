@@ -1,0 +1,379 @@
+
+<div id="introduccion">
+    <div class="container">
+        <div class="fondoPrincipal" >
+            <img
+                [src]="'/assets/Recursos/patronBroker/broker2.png'"
+                [alt]="'Patrones'"
+                class="fondoImgTop"  
+            />  
+        </div>
+    
+        <div class="textoTituloContenido">
+            <span>
+                Patron De Broker
+            </span>
+        </div>
+        
+        <h1>¿Qué Es La Arquitectura Broker?</h1>
+        
+        <p class="formato-Texto">
+            El Broker es un patrón de arquitectura que se utiliza para estructurar sistemas de software 
+            distribuidos con componentes desacoplados que interactúan por invocaciones de servicios remotos. 
+            Esto quiere decir que, si un componente necesita un servicio de otro que está en otra ubicación 
+            que no conoce, el broker se encarga de proporcionar la conexión.
+        </p>
+        <p class="formato-Texto">
+            La arquitectura broker tiene como objetivo poner un intermediario entre los clientes y el servidor 
+            o múltiples de estos, tiene el objetivo de gestionar el envío de información o la ejecución de tareas, 
+            al tener esta arquitectura permite a una aplicion tener funciones desacopladas y descentralizadas lo 
+            que facilita la escalabilidad y la seguridad del sistema informático.
+        </p>
+        
+        
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/patronBroker/broker1.jpg'"
+                [alt]="'Patron de Broker'"
+                class="fonodImagenDiseño"  
+            />  
+        </div>
+    </div>
+</div>
+
+<div id="descripcion">
+    <div class="container">
+
+        
+        <h1 class="formato-titulo">Problema</h1>
+        
+        <p class="formato-Texto2">
+            Construir un sistema de software usando un sistema distribuido con componentes desacoplados aporta una 
+            flexibilidad al mantenimiento y al cambio, pero para ello es necesario un sistema de comunicación. Si los 
+            componentes manejaran la comunicación por sí mismos, el sistema se enfrentaría a diversas dependencias y 
+            limitaciones.
+
+            Se necesitan servicios para añadir, quitar, intercambiar, activar y localizar componentes. Las aplicaciones 
+            que utilizan estos servicios no deben depender de los detalles específicos del sistema a fin de garantizar 
+            interoperabilidad, aún en una red heterogénea.
+
+        </p>
+
+        <h1 class="formato-titulo">Solución</h1>
+        
+        <p class="formato-Texto2">
+            El patrón Broker ofrece una solución al problema anterior actuando como “mediado” entre los diferentes componentes. 
+            Así, una aplicación puede acceder a los servicios distribuidos enviando mensajes al objeto apropiado, en vez de enfocarse 
+            en la comunicación entre procesos de bajo nivel. También facilita el cambio y la adición de objetos y funciones.
+
+            En resumen, el patrón Broker nos aporta las siguientes soluciones:       
+
+        </p>
+
+        <ul class="formato-Texto2">
+            <li>
+                Favorece el desacoplamiento de los componentes.
+            </li>
+            <li>
+                Esconde detalles de implementación a los usuarios.
+            </li>
+            <li>
+                Aporta una mayor flexibilidad para añadir, quitar, cambiar o reubicar objetos o funcionalidades.
+            </li>
+            <li>
+                Facilita la comunicación en redes heterogéneas.
+            </li>
+            <li>
+                Reduce la complejidad en el desarrollo de aplicaciones distribuidas.
+            </li>
+        </ul>
+
+
+        <!--
+        <p class="formato-Texto2">
+
+            En la práctica, la mayoría de las veces este estilo arquitectónico es implementado en 4 capas, presentación, 
+            negocio, persistencia y base de datos, sin embargo, es habitual ver que la capa de negocio y persistencia se 
+            combinan en una solo capa, sobre todo cuando la lógica de persistencia está incrustada dentro de la capa de negocio.
+        </p>-->
+
+
+        <div class="subContenido">
+            <h2 class="formato-titulo">Estructura Del Patron</h2>
+            
+            <!--collapsen-->
+            <br>
+            <h4 class="formato-titulo">(Presione para desplegar):</h4>
+            <br>
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse1.toggle()" [attr.aria-expanded]="!isCollapsed1"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Servidor</h4>
+                </button>
+            </p>
+            <div #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+                <div class="card">
+                    <div class="card-body">
+                        Implementan objetos que exponen su funcionalidad a través de interfaces que consisten en operaciones y atributos. 
+                        Dichas interfaces están disponibles a través de un lenguaje de definición de interfaz (IDL) o un estándar binario.
+                        Se pueden clasificar en dos tipos:
+                        <ul>
+                            <li>
+                                Servidores que ofrecen servicios comunes a muchos dominios de aplicación
+                            </li>
+                            <li>
+                                Servidores específicos para dominios específicos
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+            </div> 
+            
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsed2"
+                  aria-controls="collapseExample">
+                  <h4 class="">Cliente</h4>
+                </button>
+            </p>
+            <div  #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+                <div class="card">
+                    <div class="card-body">
+                        Los clientes son aplicaciones que accesan los servicios de, al menos, un servidor. La interacción entre clientes y servidores 
+                        se basa en un modelo dinámico, lo cual significa que los servidores también pueden actuar como clientes. Los clientes no necesitan 
+                        conocer la ubicación de los servidores que accesan; esto es importante porque permite la agregación de nuevos servicios, y el 
+                        movimiento de los servicios existentes a otras ubicaciones, aún mientras el sistema este ejecutándose.                       
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapsed3"
+                  aria-controls="collapseExample">
+                  <h4 class="">Broker</h4>
+                </button>
+            </p>
+            <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+                <div class="card">
+                    <div class="card-body">
+                        El Broker es el responsable de la comunicación entre los clientes y servidores. Cuando un cliente necesita un servicio de un servidor, 
+                        envía una petición al broker, que a su vez se la envía al servidor. El servidor realiza la funcionalidad correspondiente y envía la respuesta 
+                        (o excepción) de vuelta al broker, que se la devuelve al cliente. También ofrece API’s a clientes y servidores que incluyen operaciones para el 
+                        registro de servidores, y la invocación de métodos de servidores.
+                        
+                        <br>
+                        Si el servidor especificado es mantenido por otro broker, el broker local encuentra una ruta al broker remoto y le envía la solicitud.
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse4.toggle()" [attr.aria-expanded]="!isCollapsed4"
+                  aria-controls="collapseExample">
+                  <h4 class="">Proxies</h4>
+                </button>
+            </p>
+            <div #collapse4="ngbCollapse" [(ngbCollapse)]="isCollapsed4">
+                <div class="card">
+                    <div class="card-body">
+                        Podemos distinguir dos tipos de proxies: los proxies del lado del cliente y los proxies del lado del servidor:
+                        <ul>
+                            <li>
+                                <b>Proxies del cliente:</b> Se ubican entre el cliente y el broker para esconder detalles de implementación como el marshalling (empaquetado de parámetros), la creación y eliminación de bloques de memoria y el mecanismo de comunicación utilizado para enviar el mensaje.
+                            </li>
+                            <li>
+                                <b>Proxies del servidor:</b> Son análogos a los proxies del cliente, con el añadido de que reciben las solicitudes, las desempaquetan, llaman al servicio apropiado y hacen el marshalling de la respuesta o excepción.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <p>
+                <button type="button" class="btn btn-primary" (click)="collapse5.toggle()" [attr.aria-expanded]="!isCollapsed5"
+                  aria-controls="collapseExample">
+                  <h4 class=""> Puentes </h4>
+                </button>
+            </p>
+            <div #collapse5="ngbCollapse" [(ngbCollapse)]="isCollapsed5">
+                <div class="card">
+                    <div class="card-body">
+                        Son un componente opcional utilizado para esconder detalles de implementación cuando dos brokers interoperan.
+                    </div>
+                </div>
+                <br>
+            </div> 
+
+
+            <div class="fondoPrincipal" > 
+                <img
+                    [src]="'/assets/Recursos/patronBroker/broker3.png'"
+                    [alt]="'Patron de broker'"
+                    class="fonodImagenDiseño"  
+                />  
+            </div>
+ 
+        </div>  
+
+        
+        <br>
+        
+        
+        <h2 class="formato-titulo">Ventajas:</h2>
+
+        <ul class="formato-Texto2">
+            <li>
+                Servidores invisibles para los clientes.            
+            </li>
+            <li>
+                Escalabilidad del Software.
+            </li>
+            <li>
+                Facil implementacion de nuevos servicios.
+            </li>
+            <li>
+                Portabilidad del Sistema.
+            </li>
+        </ul>
+
+        <h2 class="formato-titulo">Desventajas:</h2>
+
+        <ul class="formato-Texto2">
+            <li>
+                Disminución del rendimiento de las conexiones            
+            </li>
+            <li>
+                Baja tolerancia a errores
+            </li>
+            <li>
+                Compleja Depuración
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="atencionArquitecura">
+    <div class="container">
+        <div class="fondoPrincipal" > 
+            <img
+                [src]="'/assets/Recursos/patronBroker/broker4.png'"
+                [alt]="'Patron de capas'"
+                class="fonodImagenDiseño"  
+            />  
+        </div>
+    
+        
+        <h1>Algunas Variantes</h1>
+       
+        <!--collapsen-->
+        <br>
+        <h4 >(Presione para desplegar):</h4>
+        <br>
+
+        <p>
+            <button type="button" class="btn btn-primary" (click)="collapse6.toggle()" [attr.aria-expanded]="!isCollapsed6"
+              aria-controls="collapseExample">
+              <h4 class=""> Sistema de comunicación directa </h4>
+            </button>
+        </p>
+        <div #collapse6="ngbCollapse" [(ngbCollapse)]="isCollapsed6">
+            <div class="card">
+                <div class="card-body">
+                    En esta variante los clientes pueden comunicarse directamente con los servidores. El broker indica a los clientes 
+                    los canales de comunicación que provee el servidor, entonces el cliente puede establecer un enlace directo al 
+                    servidor solicitado.
+                </div>
+            </div>
+            <br>
+        </div> 
+
+        <p>
+            <button type="button" class="btn btn-primary" (click)="collapse7.toggle()" [attr.aria-expanded]="!isCollapsed7"
+                aria-controls="collapseExample">
+                <h4 class=""> Sistemas de Paso de Mensajes </h4>
+            </button>
+        </p>
+        <div #collapse7="ngbCollapse" [(ngbCollapse)]="isCollapsed7">
+            <div class="card">
+                <div class="card-body">
+                    Esta variante es apropiada para sistemas que se enfocan en la transmisión de datos. Los servidores utilizan un tipo 
+                    de mensaje para determinar lo que deben hacer, en vez de ofrecer servicios que los clientes pueden invocar.
+                </div>
+            </div>
+            <br>
+        </div> 
+
+        <p>
+            <button type="button" class="btn btn-primary" (click)="collapse8.toggle()" [attr.aria-expanded]="!isCollapsed8"
+                aria-controls="collapseExample">
+                <h4 class=""> Sistemas Callback </h4>
+            </button>
+        </p>
+        <div #collapse8="ngbCollapse" [(ngbCollapse)]="isCollapsed8">
+            <div class="card">
+                <div class="card-body">
+                    En vez de implementar un modelo de comunicación activa donde los clientes producen solicitudes y los servidores 
+                    las consumen, se puede utilizar un modelo reactivo que se maneja por eventos sin hacer distinción entre clientes 
+                    y servidores. Cuando un evento llega, el broker invoca el método callback del componente registrado para reaccionar 
+                    ante ese evento, cuya ejecución, a su vez puede generar nuevos eventos causando que el broker dispare nuevas 
+                    invocaciones de métodos callback.
+                </div>
+            </div>
+            <br>
+        </div> 
+        
+            
+
+       <div class="subContenido2">
+            <h2 class="formato-titulo2"> <b>¿Donde se ven estos patrones?</b></h2>
+        
+            <p class="formato-Texto2-pequeñoAtencion">
+                <b>WWW:</b> EL World Wide Web es el sistema Broker disponible más grande del mundo. Los browsers de hipertexto, 
+                tales como Hot Java, Mosaic y Netscape actúan como brokers, y los servidores WWW hacen el papel de servidores de servicio.
+            </p>
+
+            <p class="formato-Texto2-pequeñoAtencion">
+                <b>CORBA:</b> Tecnología orientada a objetos distribuidos en sistemas heterogéneos. Un lenguaje de definición de interface 
+                esta disponible para soportar la interoperabilidad de los objetos cliente y servidor. Muchas implementaciones de CORBA 
+                reconocen la variante del sistema Broker de comunicación directa.
+            </p>
+
+            <p class="formato-Texto2-pequeñoAtencion">
+                <b>OLE 2.x de Microsoft:</b> La tecnología OLE 2.x de Microsoft provee otro ejemplo del uso de patrón de arquitectura Broker. 
+                Mientras que CORBA garantiza interoperabilidad utilizando un lenguaje de definición de interfaz, OLE 2.x define un estandar 
+                binario para mostrar y accesar la interfaz de los servidores.
+            </p>
+
+            <div class="fondoPrincipal" > 
+                <img
+                    [src]="'/assets/Recursos/patronBroker/broker5.jpg'"
+                    [alt]="'Patron de capas'"
+                    class="fonodImagenDiseño"  
+                />  
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="descripcion">
+    <div class="container">
+        
+        <h1 class="formato-titulo">Video complementario</h1>
+        <iframe class="videoYoutube" src="https://www.youtube.com/embed/M4Tkp34fiqQ" title="YouTube video player"
+         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <p class="formato-Texto2">
+            Se agrega un video complementario que explica aspectos del modelo arquitectónico Broker.
+        </p>    
+        
+
+    </div>
+</div>

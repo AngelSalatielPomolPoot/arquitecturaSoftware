@@ -1,0 +1,297 @@
+
+/*--------------------------------------------------
+                   Texto animado
+----------------------------------------------------*/
+
+.prueba2 {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  
+  .prueba2:first-of-type {     
+    animation: showup2 7s infinite;
+  }
+  
+  .prueba2:last-of-type {
+    width:0px;
+    animation: reveal2 7s infinite;
+  }
+  
+  .prueba2:last-of-type span {
+    margin-left:-200px;
+    animation: slidein2 7s infinite;
+  }
+  
+  @keyframes showup2 {
+      0% {opacity:0;}
+      20% {opacity:1;}
+      80% {opacity:1;}
+      100% {opacity:0;}
+  }
+  
+  @keyframes slidein2 {
+      0% { margin-left:-800px; }
+      20% { margin-left:-800px; }
+      35% { margin-left:0px; }
+      100% { margin-left:0px; }
+  }
+  
+  @keyframes reveal2 {
+      0% {opacity:0;width:0px;}
+      20% {opacity:1;width:0px;}
+      30% {width:200px;}
+      80% {opacity:1;}
+      100% {opacity:0;width:200px;}
+  }
+  
+  
+
+.card{
+    width: 100%;
+    max-width:100%;
+}
+
+
+.image{
+    width: 100%;
+    height: 600;
+}
+
+.letra-titulo-card{
+    color:black;
+    text-decoration: none;
+}
+
+
+.fechaFondo{
+    background: rgba(255, 255, 255, 0.50);
+}
+
+
+.columna{
+    width: 100%;
+}
+
+.row{
+    width: 100%;
+    margin: auto;
+}
+
+.aviso{
+    width: 100%;
+    background: rgba(104, 103, 103, 0.39);
+    color:rgb(255, 255, 255);
+}
+
+.efecto{
+    background: rgba(168, 168, 168, 0.39);
+}
+
+.textoColor{
+    color:rgb(255, 255, 255);
+}
+
+
+.tituloDiv{
+    margin-top: 5rem;
+    width: 100%;
+    text-align: center;
+    font-size:32px;
+    color:white;
+    background: rgba(0, 0, 0,0.35)
+}
+
+.textTitulo1{
+    color: #dc3545;
+    text-shadow: 0.04em 0.04em 0.04em rgb(136, 135, 135)
+}
+
+.textTitulo2{
+    text-shadow: 0.04em 0.04em 0.04em rgb(122, 120, 120)
+}
+
+
+
+.fondoPrincipal{
+    width: 100%;
+    background: rgba(0, 0, 0,0.25)
+}
+
+.fondoImgTop{
+    bottom: 150px;
+    width: 100%;
+  	height: 40vh; /*84*/
+	object-fit: cover;
+    opacity: 0.85;
+}
+
+
+/*---------------------------------------
+            introduccion
+-----------------------------------------*/
+#introduccion {
+    background: rgb(236, 236, 236);
+    background-size: cover;
+    padding: 60px 0 40px 0;
+    margin: center;
+}
+
+.formato-Texto{
+    font-size: calc(.9em + 1vw);
+    text-align:justify ;
+}
+
+
+/*------------------------------------------
+                descripcion
+-------------------------------------------*/
+
+#descripcion{
+    width: 100%;
+    background: url("../../../../assets/Recursos/contenido/contenido1.jpg") center top no-repeat fixed;
+    background-size: cover;
+    padding: 60px 0 40px 0;
+    position: relative;
+}
+
+#descripcion::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(85, 84, 84, 0.90);
+    z-index: 9;
+  
+}
+
+.formato-titulo{
+    color: #fff;
+}
+
+
+.formato-Texto2{
+    font-size: calc(.8em + 1vw);
+    text-align:justify ;
+    color:#fff;
+}
+
+.formato-Texto2-pequeño{
+    font-size: calc(.7em + 1vw);
+    text-align:justify ;
+    color:#fff;
+
+}
+
+.subContenido{
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 1em;
+}
+
+  /*Contenedor de las imagenes*/
+#descripcion .container {
+    position: relative;
+    z-index: 10;
+    margin: center;
+}
+
+.fonodImagenModeloVistas{
+    width: 100%;
+}
+
+.fondoModeloVista{
+    width: 100%;
+    background: rgba(0, 0, 0,0.25);
+    padding: 10px;
+}
+
+/*---------------------------------------
+            atencionArquitecura
+-----------------------------------------*/
+#atencionArquitecura {
+    background: rgb(236, 236, 236);
+    background-size: cover;
+    padding: 60px 0 40px 0;
+    margin: center;
+}
+
+.formato-Texto{
+    font-size: calc(.9em + 1vw);
+    text-align:justify ;
+}
+
+.formato-Texto2-pequeñoNegro{
+    font-size: calc(.7em + 1vw);
+    text-align:justify ;
+
+}
+
+.formato-Texto2-pequeñoAtencion{
+    font-size: calc(.7em + 1vw);
+    text-align:justify ;
+    color:#fff;
+
+}
+
+
+.subContenido2{
+    background: rgba(0,0,0,0.6);
+    padding: 15px;
+    border-radius: 1em;
+}
+
+.formato-titulo2{
+    color: #fff;
+}
+
+.formato-Texto2{
+    font-size: calc(.8em + 1vw);
+    text-align:justify ;
+    color:#fff;
+}
+
+.textoTituloContenido{
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.8rem;
+    margin-bottom: 2.2rem;
+    visibility: visible;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1) 0s, transform 0.8s cubic-bezier(0.5, 0, 0, 1) 0s;
+    font-size: calc(1.9em + 2.8vw);
+    line-height: 3.9rem;
+}
+
+
+/*---------------------------------------
+            atencionArquitecura
+-----------------------------------------*/
+#complemento {
+    background: rgb(236, 236, 236);
+    background-size: cover;
+    padding: 60px 0 40px 0;
+    margin: center;
+}
+
+.formato-Texto{
+    font-size: calc(.9em + 1vw);
+    text-align:justify ;
+}
+
+.formato-Texto2-pequeñoNegro{
+    font-size: calc(.7em + 1vw);
+    text-align:justify ;
+
+}
+.videoYoutube{
+    width: 100%;
+    height: 60vh;
+}
+
+
+
+
